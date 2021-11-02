@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- 폭은 부모에 맞게, 높이는 글자에 맞게 -->
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/home_panel_VP"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/worm_dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsColor="@color/blue"
+            app:dotsStrokeColor="@color/skyblue"
+            app:dotsCornerRadius="8dp"
+            app:dotsSize="16dp"
+            app:dotsSpacing="4dp"
+            app:dotsStrokeWidth="2dp"
+            app:layout_constraintStart_toStartOf="@id/home_panel_VP"
+            app:layout_constraintEnd_toEndOf="@id/home_panel_VP"
+            app:layout_constraintBottom_toBottomOf="@id/home_panel_VP"
+            android:layout_marginBottom="24dp" />
+
+
+
+        <ImageView
+            android:id="@+id/home_settigbtn_IV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/btn_main_setting"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <!-- (디스크 사진 위 세팅 버튼) -->
+
+        <ImageView
+            android:id="@+id/home_ticketbtn_IV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/btn_main_ticket"
+            app:layout_constraintEnd_toStartOf="@id/home_settigbtn_IV"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <!-- (디스크 사진 위 티켓 버튼) -->
+
+        <ImageView
+            android:id="@+id/home_voicebtn_IV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/btn_nugu"
+            app:layout_constraintEnd_toStartOf="@id/home_ticketbtn_IV"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <!-- (디스크 사진 위 음성 버튼) -->
+
+        <TextView
+            android:id="@+id/home_text6_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘 발매 음악"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_panel_VP"/>
+
+        <ImageView
+            android:id="@+id/home_text7_TV"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginBottom="2.5sp"
+            android:src="@drawable/btn_arrow_more"
+            app:layout_constraintStart_toEndOf="@id/home_text6_TV"
+            app:layout_constraintBottom_toBottomOf="@id/home_text6_TV"/>
+
+        <TextView
+            android:id="@+id/home_texdoverseas_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="해외"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@id/home_panel_VP"
+            app:layout_constraintTop_toBottomOf="@id/home_panel_VP"/>
+
+        <TextView
+            android:id="@+id/home_textinternal_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="국내"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@id/home_texdoverseas_TV"
+            app:layout_constraintTop_toBottomOf="@id/home_panel_VP"/>
+
+        <TextView
+            android:id="@+id/home_textoverall_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="종합"
+            android:textSize="15sp"
+            android:textColor="#0000ff"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@id/home_textinternal_TV"
+            app:layout_constraintTop_toBottomOf="@id/home_panel_VP"/>
+
+
+        <HorizontalScrollView
+            android:id="@+id/hor"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_text6_TV">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- (첫 번째 아이유 이미지뷰) -->
+
+                    <ImageView
+                        android:id="@+id/home_IU1_IV"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/img_album_exp2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/home_albumplay_IV"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/widget_black_play"
+                        app:layout_constraintBottom_toBottomOf="@id/home_IU1_IV"
+                        app:layout_constraintEnd_toEndOf="@id/home_IU1_IV" />
+
+
+                    <TextView
+                        android:id="@+id/home_text8_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="LILAC"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/home_IU1_IV" />
+
+                    <TextView
+                        android:id="@+id/home_text9_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="아이유(IU)"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/home_text8_TV" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- 2번째 아이유 이미지뷰 -->
+
+                    <ImageView
+                        android:id="@+id/home_IU2_IV"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/img_album_exp2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/home_albumplay2_IV"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/widget_black_play"
+                        app:layout_constraintBottom_toBottomOf="@id/home_IU2_IV"
+                        app:layout_constraintEnd_toEndOf="@id/home_IU2_IV" />
+
+
+                    <TextView
+                        android:id="@+id/home_texttitle_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="제목"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/home_IU2_IV"
+                        app:layout_constraintTop_toBottomOf="@id/home_IU2_IV" />
+
+                    <TextView
+                        android:id="@+id/home_singer1_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가수"
+                        android:textColor="#808080"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/home_texttitle_TV"
+                        app:layout_constraintTop_toBottomOf="@id/home_texttitle_TV" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/home_IU3_IV"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/img_album_exp2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!-- (3번째 아이유 이미지뷰) -->
+
+                    <ImageView
+                        android:id="@+id/home_albumplay3_IV"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/widget_black_play"
+                        app:layout_constraintBottom_toBottomOf="@id/home_IU3_IV"
+                        app:layout_constraintEnd_toEndOf="@id/home_IU3_IV" />
+
+
+                    <TextView
+                        android:id="@+id/home_texttitle2_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="제목"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/home_IU3_IV"
+                        app:layout_constraintTop_toBottomOf="@id/home_IU3_IV" />
+
+                    <TextView
+                        android:id="@+id/home_singer2_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가수"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/home_texttitle2_TV"
+                        app:layout_constraintTop_toBottomOf="@id/home_texttitle2_TV" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/home_viewpage1_IV"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:src="@drawable/img_home_viewpager_exp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/hor" />-->
+        <!-- (음악을 알려주세요! 배너)
+        adjustviewbounds 속성을 이용해 뷰 내부의 빈 공간 없애기 -->
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/home_banner_VP"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/hor"/>
+
+        <TextView
+            android:id="@+id/home_texteveryday_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매일 들어도 좋은 팟캐스트"
+            android:layout_marginTop="20dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+
+            app:layout_constraintTop_toBottomOf="@id/home_banner_VP"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <HorizontalScrollView
+            android:id="@+id/hor2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_texteveryday_TV">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/home_kim1_IV"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/img_potcast_exp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                    <!-- (김시선의 귀책사유_1) -->
+
+                    <TextView
+                        android:id="@+id/home_texttitle3_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="제목"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@+id/home_kim1_IV"
+                        app:layout_constraintTop_toBottomOf="@id/home_kim1_IV"/>
+
+                    <TextView
+                        android:id="@+id/home_singer3_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가수"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/home_texttitle3_TV"
+                        app:layout_constraintStart_toStartOf="@+id/home_texttitle3_TV"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/home_kim2_IV"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/img_potcast_exp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                    <!-- 김시선의 귀책사유_2 -->
+
+                    <TextView
+                        android:id="@+id/home_texttitle4_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="제목"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@+id/home_kim2_IV"
+                        app:layout_constraintTop_toBottomOf="@id/home_kim2_IV"/>
+
+                    <TextView
+                        android:id="@+id/home_singer4_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가수"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/home_texttitle4_TV"
+                        app:layout_constraintStart_toStartOf="@+id/home_texttitle4_TV"/>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/home_kim3_IV"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/img_potcast_exp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                    <!-- 김시선의 귀책사유_3 -->
+
+                    <TextView
+                        android:id="@+id/home_texttitle5_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="제목"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@+id/home_kim3_IV"
+                        app:layout_constraintTop_toBottomOf="@id/home_kim3_IV"/>
+
+                    <TextView
+                        android:id="@+id/home_singer5_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가수"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/home_texttitle5_TV"
+                        app:layout_constraintStart_toStartOf="@+id/home_texttitle5_TV"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/home_videocollection_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:text="비디오 콜랙션"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginRight="-200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hor2" />
+
+        <HorizontalScrollView
+            android:id="@+id/hor3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_videocollection_TV">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/video_piano1"
+                        android:layout_width="280dp"
+                        android:layout_height="152dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="12dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/img_video_exp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!-- (피아노 앨범_1)
+                    adjustviewbounds 속성을 이용해 뷰 내부의 빈 공간 제거 -->
+
+                    <TextView
+                        android:id="@+id/home_texttitle6_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="제목"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/video_piano1"/>
+
+                    <TextView
+                        android:id="@+id/home_singer6_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가수"
+                        android:layout_marginStart="20dp"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/home_texttitle6_TV"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/video_piano2"
+                        android:layout_width="280dp"
+                        android:layout_height="152dp"
+                        android:src="@drawable/img_video_exp"
+                        android:adjustViewBounds="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    <!-- (피아노 앨범_2)
+                    adjustviewbounds 속성을 이용해 뷰 내부의 빈 공간 제거 -->
+
+                    <TextView
+                        android:id="@+id/home_texttitle7_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="제목"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@id/video_piano2"
+                        app:layout_constraintTop_toBottomOf="@id/video_piano2"/>
+
+                    <TextView
+                        android:id="@+id/home_singer7_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가수"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/home_texttitle7_TV"
+                        app:layout_constraintStart_toStartOf="@id/home_texttitle7_TV"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- (선택하러 가기 배너)
+        뷰 내부의 빈 공간 제거 후 수평 bias 속성을 통해 레이아웃 가운데에 배치 -->
+
+        <ImageView
+            android:id="@+id/home_gotothechoice_IV"
+            android:layout_width="370dp"
+            android:layout_height="370dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/discovery_banner_aos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hor3" />
+
+        <ImageView
+            android:id="@+id/home_FLOYANOLZA_IV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/img_home_viewpager_exp2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_gotothechoice_IV"/>
+        <!-- (야놀자 배너)
+        뷰 내부의 빈 공간 제거 -->
+
+        <ImageView
+            android:id="@+id/home_facebookicon_IV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_main_facebook_btn"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/home_instagramicon_IV"
+            app:layout_constraintTop_toBottomOf="@id/home_FLOYANOLZA_IV"/>
+        <!-- (페이스북 아이콘)
+        좌측에 parent, 우측에 인스타그램 아이콘과 수평 체인을 적용_체인 스타일은 spread
+        spread inside는 페이스북 아이콘이 맨 왼쪽에, 트위터 아이콘이 맨 오른쪽에 배치)
+        packed는 가운데에 모든 아이콘이 모임 -->
+
+        <ImageView
+            android:id="@+id/home_instagramicon_IV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_main_instagram_btn"
+            app:layout_constraintStart_toEndOf="@id/home_facebookicon_IV"
+            app:layout_constraintEnd_toStartOf="@id/home_youtubeicon_IV"
+            app:layout_constraintTop_toBottomOf="@id/home_FLOYANOLZA_IV"/>
+        <!-- (인스타그램 아이콘)
+        좌측에 페이스북 아이콘, 우측에 유튜브 아이콘과 수평 체인을 적용_ 체인 스타일은 spread) -->
+
+        <ImageView
+            android:id="@+id/home_youtubeicon_IV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_main_youtube_btn"
+            app:layout_constraintStart_toEndOf="@id/home_instagramicon_IV"
+            app:layout_constraintEnd_toStartOf="@id/home_twittericon_IV"
+            app:layout_constraintTop_toBottomOf="@id/home_FLOYANOLZA_IV"/>
+        <!-- (유튜브 아이콘)
+        좌측에 인스타그램 아이콘, 우측에 트위터 아이콘과 수평 체인을 적용_ 체인 스타일은 spread) -->
+
+        <ImageView
+            android:id="@+id/home_twittericon_IV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_main_twitter_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/home_youtubeicon_IV"
+            app:layout_constraintTop_toBottomOf="@id/home_FLOYANOLZA_IV"/>
+        <!-- (인스타그램 아이콘)
+        좌측에 유튜브 아이콘, 우측에 parent와 수평 체인을 적용_ 체인 스타일은 spread) -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(주)드림어스컴퍼니 사업자 정보 >"
+            android:textColor="#c0c0c0"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_facebookicon_IV"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

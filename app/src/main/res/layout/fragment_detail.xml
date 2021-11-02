@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/detail_scrollview_SV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/detail_albumname_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="앨범명"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:layout_marginStart="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/detail_albumnamecontent_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IU 5th Album 'LILAC'"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@id/detail_albumname_TV"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/detail_artist_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아티스트"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/detail_albumname_TV"
+                app:layout_constraintTop_toBottomOf="@id/detail_albumname_TV"/>
+
+            <TextView
+                android:id="@+id/detail_artistcontent_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이유(IU)"
+                app:layout_constraintStart_toStartOf="@id/detail_albumnamecontent_TV"
+                app:layout_constraintTop_toBottomOf="@id/detail_albumnamecontent_TV"/>
+
+            <TextView
+                android:id="@+id/detail_releasecompany_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="발매사"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/detail_albumname_TV"
+                app:layout_constraintTop_toBottomOf="@id/detail_artist_TV"/>
+
+            <TextView
+                android:id="@+id/detail_releaseompanycontent_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카카오엔터테인먼트"
+                app:layout_constraintStart_toStartOf="@id/detail_artistcontent_TV"
+                app:layout_constraintTop_toBottomOf="@id/detail_artistcontent_TV"/>
+            <TextView
+                android:id="@+id/detail_agency_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="기획사"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/detail_releasecompany_TV"
+                app:layout_constraintTop_toBottomOf="@id/detail_releasecompany_TV"/>
+
+            <TextView
+                android:id="@+id/detail_agencycontent_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EDAM엔터테인먼트"
+                app:layout_constraintStart_toStartOf="@id/detail_releaseompanycontent_TV"
+                app:layout_constraintTop_toBottomOf="@id/detail_releaseompanycontent_TV"/>
+
+            <TextView
+                android:id="@+id/detail_albuminformation_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="앨범정보"
+                android:textColor="@color/black"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="@id/detail_agency_TV"
+                app:layout_constraintTop_toBottomOf="@id/detail_agency_TV"/>
+
+            <TextView
+                android:id="@+id/detail_albuminformationcontent1_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="'아이유(IU)' 정규 5집 [LILAC]"
+                app:layout_constraintStart_toStartOf="@id/detail_albuminformation_TV"
+                app:layout_constraintTop_toBottomOf="@id/detail_albuminformation_TV"/>
+
+            <TextView
+            android:id="@+id/detail_albuminformationcontent2_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text='"안녕 꽃잎 같은 안녕"'
+            app:layout_constraintStart_toStartOf="@id/detail_albuminformationcontent1_TV"
+            app:layout_constraintTop_toBottomOf="@id/detail_albuminformationcontent1_TV"/>
+
+            <TextView
+                android:id="@+id/detail_albuminformationcontent3_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text='"내 맘에 아무 의문이 없어 난 이 다음으로 가요"'
+                app:layout_constraintStart_toStartOf="@id/detail_albuminformationcontent2_TV"
+                app:layout_constraintTop_toBottomOf="@id/detail_albuminformationcontent2_TV"/>
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

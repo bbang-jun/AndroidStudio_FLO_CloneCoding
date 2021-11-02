@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/home_backgrounddisk_IV"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/img_default_4_x_1"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/home_text1_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="포근하게 덮어주는 꿈의"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/home_backgrounddisk_IV"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="목소리"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_text1_TV"
+        />
+
+    <ImageView
+        android:id="@+id/home_backgroundbutter_IV"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/img_album_exp"
+        android:layout_marginStart="-20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/home_backgrounddisk_IV"
+        app:layout_constraintStart_toStartOf="@id/home_backgroundbutter_IV"
+        />
+    <!-- (butter 앨범 이미지 뷰_아래) -->
+
+    <TextView
+        android:id="@+id/home_text2_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="젠(zen)"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="10sp"
+        android:layout_marginStart="10sp"
+        app:layout_constraintStart_toEndOf="@id/home_backgroundbutter_IV"
+        app:layout_constraintBottom_toBottomOf="@id/home_backgroundbutter_IV"/>
+
+    <TextView
+        android:id="@+id/home_text3_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="잠이 안온다"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="10sp"
+        android:layout_marginStart="10sp"
+        app:layout_constraintStart_toEndOf="@id/home_backgroundbutter_IV"
+        app:layout_constraintTop_toTopOf="@id/home_backgroundbutter_IV"/>
+
+    <ImageView
+        android:id="@+id/home_backgroundbutter2_IV"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/img_album_exp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/home_backgroundbutter_IV"
+        app:layout_constraintStart_toStartOf="@id/home_backgrounddisk_IV"
+        />
+    <!-- (butter 앨범 이미지 뷰_위) -->
+
+    <TextView
+        android:id="@+id/home_text4_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="젠(zen)"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="10sp"
+        android:layout_marginStart="10sp"
+        app:layout_constraintStart_toEndOf="@id/home_backgroundbutter2_IV"
+        app:layout_constraintBottom_toBottomOf="@id/home_backgroundbutter2_IV"/>
+
+    <TextView
+        android:id="@+id/home_text5_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="잠이 안온다"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="10sp"
+        android:layout_marginStart="10sp"
+        app:layout_constraintStart_toEndOf="@id/home_backgroundbutter2_IV"
+        app:layout_constraintTop_toTopOf="@id/home_backgroundbutter2_IV"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

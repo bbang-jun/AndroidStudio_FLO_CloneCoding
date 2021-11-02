@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/song_playersetting_IB"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_player_setting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <!-- 좌측 최상단 플레이어세팅 버튼 -->
+
+    <ImageButton
+        android:id="@+id/song_EQ_IB"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_player_eq_off"
+        app:layout_constraintStart_toEndOf="@id/song_playersetting_IB"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <!-- 플레이어세팅 옆 EQ 버튼 -->
+
+    <ImageButton
+        android:id="@+id/song_nugu_IB"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/nugu_btn_down"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <!-- SongActivity 화면 내리기 -->
+
+    <ImageButton
+        android:id="@+id/song_playermore_IB"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/btn_player_more"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:layout_marginEnd="23dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_nugu_IB"/>
+    <!-- 화면 내리는 버튼 밑 player_more 버튼 -->
+
+    <TextView
+        android:id="@+id/song_songtitle_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="제목"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <!-- 제목: "라일락" 텍스트 -->
+
+    <TextView
+        android:id="@+id/song_songsinger_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가수"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/song_arrow_TV"
+        app:layout_constraintTop_toBottomOf="@id/song_songtitle_TV"/>
+    <!-- 가수: 아이유(IU) 텍스트 -->
+
+    <ImageButton
+        android:id="@+id/song_arrow_TV"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/btn_arrow_black"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toEndOf="@id/song_songsinger_TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_songtitle_TV"/>
+    <!-- 가수 옆 화살표 버튼 -->
+
+    <!-- 아이유 앨범 -->
+
+    <ImageView
+        android:id="@+id/song_album_IU_IV"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/img_album_exp2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_songsinger_TV" />
+
+    <TextView
+        android:id="@+id/lyrics_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="하이얀 우리 봄날의 climax\n아 얼마나 기쁜 일이야"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_album_IU_IV"/>
+    <!-- 가사 텍스트 -->
+
+    <ImageButton
+        android:id="@+id/song_heart_off_IB"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_my_like_off"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toStartOf="@id/song_unlink_off_IB"
+        app:layout_constraintTop_toBottomOf="@id/lyrics_TV"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <!-- heart_off 버튼. unlik_off 버튼과 체인 구현-->
+
+    <ImageButton
+        android:id="@+id/song_unlink_off_IB"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/btn_player_unlike_off"
+        android:scaleType="fitXY"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyrics_TV"
+        app:layout_constraintStart_toEndOf="@id/song_heart_off_IB"/>
+    <!-- unlink_off 버튼. heart_off 버튼과 체인 구현 -->
+
+    <!-- 음악의 진행 상태-->
+
+    <!--    backgroundtint: 진행되지 않은 회색 부분 progresstint: 진행된 파란색 부분
+     background: 현재 진행 부분에 둥근 부분 thumb: 진행 중인 커서의 이미지 -->
+
+
+    <SeekBar
+        android:id="@+id/song_player_SB"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@null"
+        android:max="1000"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:progress="0"
+        android:progressBackgroundTint="@color/song_player_bg"
+        android:progressTint="@color/song_player"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_heart_off_IB"
+        app:layout_constraintBottom_toTopOf="@id/song_play_LAYOUT"/>
+<!--
+android:background="@null" 이동 시 생기는 회색 원 제거
+android:progressBackgroundTint="@color/song_player_bg" 재생되지 않은 부분의 배경색
+android:progressTint="@color/song_player" 재생된 부분의 배경색-->
+
+    <TextView
+        android:id="@+id/song_starttime_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textStyle="normal"
+        android:textColor="#0000ff"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_player_SB"/>
+
+    <TextView
+        android:id="@+id/song_endtime_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01:00"
+        android:textStyle="normal"
+        android:textColor="#0000ff"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_player_SB"/>
+
+    <!-- 반복 재생 레이아웃 -->
+    <LinearLayout
+        android:id="@+id/song_repeatplaylayout_LO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/song_play_LAYOUT"
+        app:layout_constraintTop_toBottomOf="@id/song_player_SB"
+        app:layout_constraintBottom_toTopOf="@id/song_relatedsong_IB">
+
+        <ImageButton
+            android:id="@+id/song_repeat_off_IB"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/nugu_btn_repeat_inactive"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/song_relatedsong_IB"
+            app:layout_constraintEnd_toStartOf="@id/song_play_LAYOUT"
+            app:layout_constraintTop_toBottomOf="@id/song_player_SB"/>
+        <!-- off 상태 반복 재생 버튼 -->
+
+        <ImageButton
+            android:id="@+id/song_repeat_on1_IB"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/btn_player_repeat_on_light"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/song_repeat_on2_IB"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/btn_player_repeat_on1_light"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/song_play_LAYOUT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_player_SB"
+        app:layout_constraintBottom_toTopOf="@id/song_relatedsong_IB">
+        <!-- 리니어 레이아웃을 통한 배치 -->
+
+        <ImageButton
+            android:id="@+id/song_previousbutton_IB"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/nugu_btn_skip_previous_32"
+            android:background="@color/white"
+            android:scaleType="fitXY" />
+        <!-- previous 버튼 -->
+
+        <!-- play 버튼 -->
+
+        <ImageButton
+            android:id="@+id/song_playbutton_IV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            android:src="@drawable/nugu_btn_play_32" />
+
+        <ImageButton
+            android:id="@+id/song_pausebutton_IV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/btn_miniplay_mvpause"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/song_playbutton_IV"
+            app:layout_constraintBottom_toTopOf="@id/song_button_instagram_IB"/>
+        <!-- 숨겨진 멈춤 버튼 -->
+
+        <ImageButton
+            android:id="@+id/song_nextbutton_IB"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/nugu_btn_skip_next_32"
+            android:background="@color/white"
+            android:scaleType="fitXY" />
+        <!-- next 버튼 -->
+    </LinearLayout>
+
+    <!-- 랜덤 재생 레이아웃 -->
+    <LinearLayout
+        android:id="@+id/song_randomplaylayout_LO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/song_play_LAYOUT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_player_SB"
+        app:layout_constraintBottom_toTopOf="@id/song_relatedsong_IB">
+
+        <!-- 랜덤 플레이 off 버튼 -->
+        <ImageButton
+            android:id="@+id/song_randomplayoff_IB"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/nugu_btn_random_inactive"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@id/song_play_LAYOUT"
+            app:layout_constraintTop_toBottomOf="@id/song_player_SB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/song_relatedsong_IB"/>
+
+        <!-- 랜덤 플레이 온 버튼-->
+        <ImageButton
+            android:id="@+id/song_randomplay_on_IB"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/btn_player_random_on_light"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            android:visibility="gone"/>
+
+
+    </LinearLayout>
+
+
+
+
+    <ImageButton
+        android:id="@+id/song_button_instagram_IB"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/btn_actionbar_instagram"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <!-- 인스타그램 공유 버튼 -->
+
+    <ImageButton
+        android:id="@+id/song_relatedsong_IB"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_player_related"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!-- 유사곡 버튼 -->
+
+    <ImageButton
+        android:id="@+id/song_go_list_IB"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/btn_player_go_list"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <!-- 플레이리스트 버튼 -->
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
