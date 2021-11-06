@@ -22,6 +22,11 @@ class HomeFragment : Fragment() {
 
     var bannerTime = 0
 
+    // recycler view step 3-1 arraylist 생성
+    private var albumDatas = ArrayList<Album>()
+
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,14 +36,25 @@ class HomeFragment : Fragment() {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false) // 뷰 바인딩 2
 
-        binding.homeIU1IV.setOnClickListener {
-            (context as MainActivity).supportFragmentManager.beginTransaction() // context as Mainactivity = mainactivity에서의 startactivity와 같은 기능.
-                .replace(
-                    R.id.main_frm,
-                    AlbumFragment()
-                ) // replace: mainactivity에 있는 homefragment를 albumfragment로 대체한다.
-                .commitAllowingStateLoss() // 내부 동작 하나의 패턴.
+//        binding.homeIU1IV.setOnClickListener {
+//            (context as MainActivity).supportFragmentManager.beginTransaction() // context as Mainactivity = mainactivity에서의 startactivity와 같은 기능.
+//                .replace(
+//                    R.id.main_frm,
+//                    AlbumFragment()
+//                ) // replace: mainactivity에 있는 homefragment를 albumfragment로 대체한다.
+//                .commitAllowingStateLoss() // 내부 동작 하나의 패턴.
+//        }
+
+        // recycler view step 3-2 데이터 리스트 생성(더미 데이터)
+        albumDatas.apply{
+            add(Album("Butter", "방탄소년단 (BTS)", R.drawable.img_album_exp))
+            add(Album("Lilac", "아이유 (IU)", R.drawable.img_album_exp2))
+            add(Album("Next Level", "에스파 (AESPA)", R.drawable.img_album_exp3))
+            add(Album("Boy with Luv", "방탄소년단 (BTS)", R.drawable.img_album_exp4))
+            add(Album("BBoom BBoom", "모모랜드 (MOMOILAND)", R.drawable.img_album_exp5))
+            add(Album("weekend", "태연 (Tae Yeon)", R.drawable.img_album_exp6))
         }
+
 
         val panelAdapter = PanelViewpagerAdapter(this) // PanelViewpager와 Homefragment의 연결
         binding.homePanelVP.adapter = panelAdapter
