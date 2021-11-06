@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.flo_BBangJun.databinding.FragmentHomeBinding
 import com.example.flo_ByeongJunKang.AlbumFragment
@@ -55,6 +56,12 @@ class HomeFragment : Fragment() {
             add(Album("weekend", "태연 (Tae Yeon)", R.drawable.img_album_exp6))
         }
 
+        // step5-1(리사이클러뷰에 어댑터 연결) 더미데이터와 Adapter 연결
+        val albumRVAdapter = AlbumRVAdapter(albumDatas)
+        // step5-2(리사이클러뷰에 어댑터 연결) recyclerview에 Adapter 연결
+        binding.homeTodayMusicAlbumRecyclerview.adapter = albumRVAdapter
+        // step5-3(레이아웃 매니저 추가) 레이아웃 매니저 설정(아이템 배치를 어떻게 할 것인지) 리니어레이아웃에서 수평으로.
+        binding.homeTodayMusicAlbumRecyclerview.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         val panelAdapter = PanelViewpagerAdapter(this) // PanelViewpager와 Homefragment의 연결
         binding.homePanelVP.adapter = panelAdapter
