@@ -8,7 +8,7 @@
 <!--    itemlayout에서는 기본적으로 최상단 레이아웃의 width와 height를 wrap으로 지정해주어야 함-->
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/item_LilacAlbum_CV"
+        android:id="@+id/item_album_cover_img_cardView"
         android:layout_width="150dp"
         android:layout_height="150dp"
         app:cardCornerRadius="7dp"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/item_LilacAlbum_IV"
+            android:id="@+id/item_album_cover_img_IV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
@@ -29,18 +29,18 @@
 
 
     <ImageView
-        android:id="@+id/item_albumplay_IV"
+        android:id="@+id/item_album_play_img_IV"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:src="@drawable/widget_black_play"
-        app:layout_constraintBottom_toBottomOf="@id/item_LilacAlbum_CV"
-        app:layout_constraintEnd_toEndOf="@id/item_LilacAlbum_CV" />
+        app:layout_constraintBottom_toBottomOf="@+id/item_album_cover_img_cardView"
+        app:layout_constraintEnd_toEndOf="@+id/item_album_cover_img_cardView" />
 
 
     <TextView
-        android:id="@+id/item_LILAC_TV"
+        android:id="@+id/item_album_title_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LILAC"
@@ -48,16 +48,16 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/item_LilacAlbum_CV" />
+        app:layout_constraintTop_toBottomOf="@id/item_album_cover_img_cardView" />
 
     <TextView
-        android:id="@+id/item_IU_TV"
+        android:id="@+id/item_album_singer_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="아이유(IU)"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/item_LILAC_TV" />
+        app:layout_constraintTop_toBottomOf="@id/item_album_title_TV" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
