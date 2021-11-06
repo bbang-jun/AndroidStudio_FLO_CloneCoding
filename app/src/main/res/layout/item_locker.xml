@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_locker_cover_img_cardview"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:cardCornerRadius="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/item_locker_cover_img_IV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_album_vvs"
+            android:scaleType="fitCenter" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/item_locker_title_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VVS"
+        android:textColor="@color/black"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/item_locker_cover_img_cardview"
+        app:layout_constraintTop_toTopOf="@id/item_locker_cover_img_cardview"
+        app:layout_constraintBottom_toTopOf="@id/item_locker_singer_TV"/>
+
+    <TextView
+        android:id="@+id/item_locker_singer_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="미란이, 먼치맨, 쿤디판다, 머쉬베놈, 저스디스"
+        android:layout_marginStart="10dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/item_locker_cover_img_cardview"
+        app:layout_constraintBottom_toBottomOf="@id/item_locker_cover_img_cardview"
+        app:layout_constraintTop_toBottomOf="@id/item_locker_title_TV"/>
+
+    <ImageButton
+        android:id="@+id/item_locker_player_IB"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_miniplayer_play"
+        app:layout_constraintEnd_toStartOf="@id/item_locker_playermore_IB"
+        app:layout_constraintTop_toTopOf="@id/item_locker_playermore_IB"/>
+
+    <ImageButton
+        android:id="@+id/item_locker_playermore_IB"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/btn_player_more"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_locker_cover_img_cardview"
+        app:layout_constraintBottom_toBottomOf="@id/item_locker_cover_img_cardview"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

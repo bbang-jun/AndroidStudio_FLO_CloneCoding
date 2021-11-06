@@ -21,6 +21,7 @@ class AlbumRVAdapter(private val albumList: ArrayList<Album>) : RecyclerView.Ada
     override fun onBindViewHolder(holder: AlbumRVAdapter.ViewHolder, position: Int) {
         // recyclerview에서는 index가 position
         holder.bind(albumList[position])
+        holder.itemView.setOnClickListener {  }
     }
 
     // 4-7데이터 세트 크기를 알려주는 함수(recyclerview가 마지막이 언제인지를 알게 해줌)
