@@ -46,7 +46,7 @@
     <!-- 하트 off 버튼 -->
 
     <TextView
-        android:id="@+id/album_IU5thtext_TV"
+        android:id="@+id/album_MusicTitle_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="IU 5th Album 'LILAC'"
@@ -59,12 +59,12 @@
     <!-- 5th Album 텍스트 -->
 
     <TextView
-        android:id="@+id/album_singerIUtext_TV"
+        android:id="@+id/album_Singer_Name_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="아이유(IU)"
         android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/album_IU5thtext_TV"
+        app:layout_constraintTop_toBottomOf="@id/album_MusicTitle_TV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -74,12 +74,12 @@
         android:layout_height="wrap_content"
         android:text="2021.03.25 | 정규 | 댄스 팝"
         android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/album_singerIUtext_TV"
+        app:layout_constraintTop_toBottomOf="@id/album_Singer_Name_TV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <ImageView
-        android:id="@+id/album_lilacalbum_IV"
+        android:id="@+id/album_Album_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/img_album_exp2"
@@ -94,9 +94,9 @@
         android:layout_height="200dp"
         android:src="@drawable/img_album_lp"
         android:adjustViewBounds="true"
-        app:layout_constraintStart_toEndOf="@id/album_lilacalbum_IV"
-        app:layout_constraintTop_toTopOf="@id/album_lilacalbum_IV"
-        app:layout_constraintBottom_toBottomOf="@id/album_lilacalbum_IV"/>
+        app:layout_constraintStart_toEndOf="@id/album_Album_IV"
+        app:layout_constraintTop_toTopOf="@id/album_Album_IV"
+        app:layout_constraintBottom_toBottomOf="@id/album_Album_IV"/>
 
     <ImageView
         android:layout_width="40dp"
@@ -104,8 +104,8 @@
         android:src="@drawable/widget_black_play"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintEnd_toEndOf="@id/album_lilacalbum_IV"
-        app:layout_constraintBottom_toBottomOf="@id/album_lilacalbum_IV"/>
+        app:layout_constraintEnd_toEndOf="@id/album_Album_IV"
+        app:layout_constraintBottom_toBottomOf="@id/album_Album_IV"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/album_content_TB"
@@ -115,7 +115,7 @@
         app:tabIndicatorColor="#3f3fff"
         app:tabTextColor="#3f3fff"
         app:tabRippleColor="#00ff0000"
-        app:layout_constraintTop_toBottomOf="@id/album_lilacalbum_IV"
+        app:layout_constraintTop_toBottomOf="@id/album_Album_IV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 <!--    초기에는 fullwidth가 true 상태여서 인디케이터 길이가 길었음     -->
@@ -137,7 +137,7 @@
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/album_lilacalbum_IV"
+        app:layout_constraintTop_toBottomOf="@id/album_Album_IV"
         app:layout_constraintBottom_toBottomOf="parent">
 
 

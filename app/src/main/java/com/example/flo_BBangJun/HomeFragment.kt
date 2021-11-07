@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.flo_BBangJun.databinding.FragmentHomeBinding
 import com.example.flo_ByeongJunKang.AlbumFragment
-
+import com.google.gson.Gson
 
 
 class HomeFragment : Fragment() {
@@ -39,10 +39,7 @@ class HomeFragment : Fragment() {
 
 //        binding.homeIU1IV.setOnClickListener {
 //            (context as MainActivity).supportFragmentManager.beginTransaction() // context as Mainactivity = mainactivity에서의 startactivity와 같은 기능.
-//                .replace(
-//                    R.id.main_frm,
-//                    AlbumFragment()
-//                ) // replace: mainactivity에 있는 homefragment를 albumfragment로 대체한다.
+//                .replace(R.id.main_frm, AlbumFragment()) // replace: mainactivity에 있는 homefragment를 albumfragment로 대체한다.
 //                .commitAllowingStateLoss() // 내부 동작 하나의 패턴.
 //        }
 
@@ -65,6 +62,14 @@ class HomeFragment : Fragment() {
 
         val panelAdapter = PanelViewpagerAdapter(this) // PanelViewpager와 Homefragment의 연결
         binding.homePanelVP.adapter = panelAdapter
+
+        // 아이템뷰를 클릭했을 때 fragment 전환
+        albumRVAdapter.setMyItemClickListener(object : AlbumRVAdapter.MyItemClickListener{
+
+            override fun onItemclick(album: Album) {
+                changeAlbumFragment(album)
+            }
+        })
 
 
         val bannerAdapter =
@@ -89,6 +94,18 @@ class HomeFragment : Fragment() {
         threadBanner.start()
 
         return binding.root // 뷰바인딩 3
+    }
+
+    private fun changeAlbumFragment(album: Album) {
+        (context as MainActivity).supportFragmentManager.beginTransaction() // context as Mainactivity = mainactivity에서의 startactivity와 같은 기능.
+            .replace(R.id.main_frm, AlbumFragment().apply {
+                arguments = Bundle().apply {
+                    val gson = Gson() // putString("title", album.title) 반복을 지양하기 위해 gson 사용
+                    val albumJson = gson.toJson(album)
+                    putString("album", albumJson)
+                }
+            }) // replace: mainactivity에 있는 homefragment를 albumfragment로 대체한다.
+            .commitAllowingStateLoss() // 내부 동작 하나의 패턴.
     }
 
     override fun onPause(){

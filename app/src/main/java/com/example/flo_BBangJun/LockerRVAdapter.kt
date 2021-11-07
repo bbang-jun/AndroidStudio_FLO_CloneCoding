@@ -7,14 +7,34 @@ import com.example.flo_BBangJun.databinding.ItemLockerBinding
 
 class LockerRVAdapter(private val lockerAlbumList: ArrayList<LockerAlbum>) : RecyclerView.Adapter<LockerRVAdapter.ViewHolder>() {
 
+    interface MyItemClickListener{
+        fun onRemoveAlbum(position: Int)
+    }
+
+    // 리스너 객체를 저장할 변수
+    private lateinit var lItemClickListener: MyItemClickListener
+
+    // 리스너 객체를 전달받는 함수
+    fun setMyItemClickListener(itemClickListener: MyItemClickListener){
+        lItemClickListener = itemClickListener
+    }
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): LockerRVAdapter.ViewHolder {
         val binding: ItemLockerBinding = ItemLockerBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
 
         return ViewHolder(binding)
     }
 
+    fun removeItem(position: Int){
+        lockerAlbumList.removeAt(position)
+        notifyDataSetChanged()
+    }
+
+
+
     override fun onBindViewHolder(holder: LockerRVAdapter.ViewHolder, position: Int) {
         holder.bind(lockerAlbumList[position])
+        holder.binding.itemLockerPlayermoreIB.setOnClickListener { lItemClickListener.onRemoveAlbum(position) }
     }
 
     override fun getItemCount(): Int = lockerAlbumList.size

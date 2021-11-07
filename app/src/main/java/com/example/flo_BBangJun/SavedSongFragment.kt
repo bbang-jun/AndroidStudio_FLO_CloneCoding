@@ -27,8 +27,19 @@ class SavedSongFragment : Fragment(){
             add(LockerAlbum("Queendom", "Red Velvet (레드벨벳)", R.drawable.img_album_queendom))
         }
 
+
+        // 더미데이터와 Adapter 연결
         val lockerRVAdapter = LockerRVAdapter(lockerAlbumDatas)
+        // 리사이클러뷰에 어댑터를 연결
         binding.lockerMusicAlbumRecyclerView.adapter = lockerRVAdapter
+
+        lockerRVAdapter.setMyItemClickListener(object : LockerRVAdapter.MyItemClickListener{
+            override fun onRemoveAlbum(position: Int) {
+                lockerRVAdapter.removeItem(position)
+            }
+        })
+
+        // 레이아웃 매니저 설정
         binding.lockerMusicAlbumRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
 
         return binding.root
