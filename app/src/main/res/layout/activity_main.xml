@@ -10,24 +10,21 @@
         android:id="@+id/main_frm"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
         app:layout_constraintBottom_toTopOf="@id/main_player_layout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
-        android:id="@+id/song_player_SB"
+        android:id="@+id/main_progress_sb"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
         android:background="@null"
-        android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        android:progress="0"
-        android:max="1000"
+        android:paddingStart="0dp"
+        android:layout_marginBottom="-3dp"
         android:progressBackgroundTint="@color/song_player_bg"
         android:progressTint="@color/song_player"
+        android:progress="0"
+        android:max="1000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/main_player_layout" />
@@ -36,86 +33,79 @@
         android:id="@+id/main_player_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/main_bnv"
-        android:paddingVertical="5dp"
         android:background="#F9F9F9"
-        >
-        <LinearLayout
+        android:paddingVertical="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_bnv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_marginStart="20dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <TextView
-                android:id="@+id/main_miniplayertitle_TV"
+                android:id="@+id/main_miniplayer_title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:text="라일락"
-                android:textColor="@color/black" />
+                android:text="제목"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
             <TextView
-                android:id="@+id/main_miniplayersinger_TV"
+                android:id="@+id/main_miniplayer_singer_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:text="아이유(IU)"/>
+                android:text="가수"
+                android:textSize="12sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center_vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-
-            android:gravity="center_vertical">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/main_miniplayer_previous_iv"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/btn_miniplayer_previous" />
 
-            <ImageButton
-                android:id="@+id/main_miniplayer_btn"
+            <ImageView
+                android:id="@+id/main_miniplayer_play_iv"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@color/white"
-                android:scaleType="fitXY"
                 android:src="@drawable/btn_miniplayer_play" />
 
-            <ImageButton
-                android:id="@+id/main_miniplayerpause_IB"
+            <ImageView
+                android:id="@+id/main_miniplayer_pause_iv"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/btn_miniplay_mvpause"
-                android:scaleType="fitXY"
-                android:background="@color/white"
-                android:visibility="gone"/>
-
-            <ImageView
-                android:id="@+id/main_pause_btn"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:visibility="gone"
-                android:src="@drawable/btn_miniplay_mvpause"/>
+                android:visibility="gone" />
 
 
             <ImageView
+                android:id="@+id/main_miniplayer_next_iv"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-
                 android:src="@drawable/btn_miniplayer_next" />
 
 
             <ImageView
+                android:id="@+id/main_miniplayer_list_iv"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@drawable/btn_player_go_list"
-                android:layout_marginHorizontal="15dp" />
-
+                android:layout_marginHorizontal="15dp"
+                android:src="@drawable/btn_player_go_list" />
 
         </LinearLayout>
 
