@@ -59,15 +59,14 @@
         android:id="@+id/item_locker_playermore_IB"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:src="@drawable/btn_player_more"
+        android:layout_marginEnd="12dp"
         android:background="@color/white"
         android:scaleType="fitXY"
-        android:layout_marginEnd="15dp"
+        android:src="@drawable/btn_player_more"
+        app:layout_constraintBottom_toBottomOf="@id/item_locker_cover_img_cardview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/item_locker_cover_img_cardview"
-        app:layout_constraintBottom_toBottomOf="@id/item_locker_cover_img_cardview"/>
-
-
+        app:layout_constraintVertical_bias="0.533" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
