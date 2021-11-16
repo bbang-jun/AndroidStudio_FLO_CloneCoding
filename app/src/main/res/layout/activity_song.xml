@@ -31,18 +31,19 @@
         app:layout_constraintTop_toTopOf="parent"/>
     <!-- 플레이어세팅 옆 EQ 버튼 -->
 
+    <!-- SongActivity 화면 내리기 -->
+
     <ImageButton
         android:id="@+id/song_nugu_IB"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/nugu_btn_down"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@color/white"
         android:scaleType="fitXY"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
+        android:src="@drawable/nugu_btn_down"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <!-- SongActivity 화면 내리기 -->
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/song_playermore_IB"
@@ -126,32 +127,6 @@
         app:layout_constraintTop_toBottomOf="@id/song_album_IU_IV"/>
     <!-- 가사 텍스트 -->
 
-    <ImageButton
-        android:id="@+id/song_heart_off_IB"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@drawable/ic_my_like_off"
-        android:background="@color/white"
-        android:scaleType="fitXY"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        android:layout_marginEnd="50dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toStartOf="@id/song_unlink_off_IB"
-        app:layout_constraintTop_toBottomOf="@id/lyrics_TV"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <!-- heart_off 버튼. unlik_off 버튼과 체인 구현-->
-
-    <ImageButton
-        android:id="@+id/song_unlink_off_IB"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@drawable/btn_player_unlike_off"
-        android:scaleType="fitXY"
-        android:layout_marginTop="15dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lyrics_TV"
-        app:layout_constraintStart_toEndOf="@id/song_heart_off_IB"/>
     <!-- unlink_off 버튼. heart_off 버튼과 체인 구현 -->
 
     <!-- 음악의 진행 상태-->
@@ -159,6 +134,39 @@
     <!--    backgroundtint: 진행되지 않은 회색 부분 progresstint: 진행된 파란색 부분
      background: 현재 진행 부분에 둥근 부분 thumb: 진행 중인 커서의 이미지 -->
 
+
+    <!--
+android:background="@null" 이동 시 생기는 회색 원 제거
+android:progressBackgroundTint="@color/song_player_bg" 재생되지 않은 부분의 배경색
+android:progressTint="@color/song_player" 재생된 부분의 배경색-->
+
+    <LinearLayout
+        android:id="@+id/song_like_iv_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/song_player_SB"
+        app:layout_constraintEnd_toEndOf="@+id/lyrics_TV"
+        app:layout_constraintStart_toStartOf="@id/lyrics_TV"
+        app:layout_constraintTop_toBottomOf="@id/lyrics_TV">
+
+        <ImageView
+            android:id="@+id/song_like_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_my_like_off" />
+
+        <ImageView
+            android:id="@+id/song_unlike_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="45dp"
+            android:src="@drawable/btn_player_unlike_off" />
+
+    </LinearLayout>
 
     <SeekBar
         android:id="@+id/song_player_SB"
@@ -173,15 +181,11 @@
         android:progress="0"
         android:progressBackgroundTint="@color/song_player_bg"
         android:progressTint="@color/song_player"
+        app:layout_constraintBottom_toTopOf="@id/song_play_LAYOUT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/song_heart_off_IB"
-        app:layout_constraintBottom_toTopOf="@id/song_play_LAYOUT"/>
-<!--
-android:background="@null" 이동 시 생기는 회색 원 제거
-android:progressBackgroundTint="@color/song_player_bg" 재생되지 않은 부분의 배경색
-android:progressTint="@color/song_player" 재생된 부분의 배경색-->
+        app:layout_constraintTop_toBottomOf="@id/song_like_iv_layout" />
 
     <TextView
         android:id="@+id/song_starttime_TV"

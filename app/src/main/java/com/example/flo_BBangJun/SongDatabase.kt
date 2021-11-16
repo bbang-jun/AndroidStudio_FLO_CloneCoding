@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [Song::class], version = 1)
 abstract class SongDatabase: RoomDatabase() {
-    abstract fun songDao(): SongDao
+    abstract fun songDao(): SongDao // 추상클래스
 
     companion object {
         private var instance: SongDatabase? = null
@@ -20,11 +20,11 @@ abstract class SongDatabase: RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         SongDatabase::class.java,
-                        "song-database"//다른 데이터 베이스랑 이름겹치면 꼬임
-                    ).allowMainThreadQueries().build()
+                        "song-database"
+                    ).allowMainThreadQueries().build() // main thread
                 }
             }
-            return instance
+            return instance // 인스턴스 반환
         }
     }
 }
