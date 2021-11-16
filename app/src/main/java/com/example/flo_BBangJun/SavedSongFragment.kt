@@ -20,7 +20,7 @@ class SavedSongFragment : Fragment() {
     ): View? {
         binding = FragmentLockerSavedsongBinding.inflate(inflater, container, false)
 
-        songDB = SongDatabase.getInstance(requireContext())!!
+        songDB = SongDatabase.getInstance(requireContext())!! // db로부터 인스턴스 가져오기
 
         return binding.root
     }
@@ -38,12 +38,14 @@ class SavedSongFragment : Fragment() {
 
         songRVAdapter.setMyItemClickListener(object : SongRVAdapter.MyItemClickListener{
             override fun onRemoveSong(songId: Int) {
-                songDB.songDao().updateIsLikeById(false,songId)
+                songDB.songDao().updateIsLikeById(false, songId)
             }
         })
 
         binding.lockerSavedSongRecyclerView.adapter = songRVAdapter
 
+
+        // 좋아요 버튼이 눌린 노래들의 데이터가 songRVAdapter에 들어감
         songRVAdapter.addSongs(songDB.songDao().getLikedSongs(true) as ArrayList)
 
     }

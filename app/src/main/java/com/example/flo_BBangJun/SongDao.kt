@@ -20,7 +20,7 @@ interface SongDao {
     @Query("SELECT * FROM SongTable WHERE id = :id") // 특정 id값인 song의 모든 테이블 반환
     fun getSong(id: Int): Song
 
-    @Query("UPDATE SongTable SET isLike= :isLike WHERE id = :id") // 해당 id값을 가진 song 반환
+    @Query("UPDATE SongTable SET isLike= :isLike WHERE id = :id") // 해당 id값을 가진 song의 isLike 값 갱신
     fun updateIsLikeById(isLike :Boolean, id: Int)
 
     @Query("SELECT * FROM SongTable WHERE isLike = :isLike")

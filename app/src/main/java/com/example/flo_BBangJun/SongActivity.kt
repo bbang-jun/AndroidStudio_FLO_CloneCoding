@@ -59,7 +59,7 @@ class SongActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
 
-
+        // 미디어플레이어 중첩 방지
         timer.interrupt() // 스레드를 해제함
         mediaPlayer?.release() // 미디어플레이어가 가지고 있던 리소스를 해제
         mediaPlayer = null // 미디어플레이어 해제
@@ -143,9 +143,9 @@ class SongActivity : AppCompatActivity() {
         binding.songLikeIv.setOnClickListener {
             setLike(songs[nowPos].isLike)
         }
-
     }
-    private fun moveSong(direct: Int){
+
+    private fun moveSong(direct: Int){ // 노래 이동
 
         if (nowPos + direct < 0){
             Toast.makeText(this,"first song",Toast.LENGTH_SHORT).show()
@@ -158,7 +158,7 @@ class SongActivity : AppCompatActivity() {
 
         nowPos += direct
 
-        timer.interrupt()
+        timer.interrupt() // 새로운 노래 재생을 위해 쓰레드에 인터럽
         startTimer()
 
         mediaPlayer?.release() // 미디어플레이어가 가지고 있던 리소스를 해방
@@ -166,11 +166,13 @@ class SongActivity : AppCompatActivity() {
 
         setPlayer(songs[nowPos])
     }
+
+    // 좋아요 버튼
     private fun setLike(isLike: Boolean){
         songs[nowPos].isLike = !isLike
-        songDB.songDao().updateIsLikeById(!isLike,songs[nowPos].id)
+        songDB.songDao().updateIsLikeById(!isLike,songs[nowPos].id) // songs의 isLike가 갱신될 때 db에도 저장
 
-        if (isLike){
+        if (isLike){ // true
             binding.songLikeIv.setImageResource(R.drawable.ic_my_like_off)
         }else{
             binding.songLikeIv.setImageResource(R.drawable.ic_my_like_on)

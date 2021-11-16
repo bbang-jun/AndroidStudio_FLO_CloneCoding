@@ -9,7 +9,7 @@ import com.example.flo_BBangJun.databinding.ItemSongBinding
 
 class SongRVAdapter() :
         RecyclerView.Adapter<SongRVAdapter.ViewHolder>() {
-    private val songs = ArrayList<Song>()
+    private val songs = ArrayList<Song>() // 기존에는 SavedSongFragment에서 데이터 리스트를 전달했지만 내부에서 리스트 관리
 
     interface MyItemClickListener{
         fun onRemoveSong(songId: Int)
@@ -29,9 +29,9 @@ class SongRVAdapter() :
 
     override fun onBindViewHolder(holder: SongRVAdapter.ViewHolder, position: Int) {
         holder.bind(songs[position])
-        holder.binding.itemSongMoreIv.setOnClickListener {
-            removeSong(position)
-            mItemClickListener.onRemoveSong(songs[position].id)
+        holder.binding.itemSongMoreIv.setOnClickListener { // 점3개 버튼이 눌렸을 때 item 삭제
+            removeSong(position) // 리스트에서 삭제
+            mItemClickListener.onRemoveSong(songs[position].id) // db에서도 삭제
         }
     }
 
@@ -40,7 +40,7 @@ class SongRVAdapter() :
     @SuppressLint("NotifyDataSetChanged")
     fun addSongs(songs: ArrayList<Song>) {
         this.songs.clear()
-        this.songs.addAll(songs)
+        this.songs.addAll(songs) // 리스트 값을 addAll을 통해 songs에 추가
 
         notifyDataSetChanged()
     }

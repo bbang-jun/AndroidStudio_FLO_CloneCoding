@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         initNavigation()
         inputDummySongs()
 
+        // 룸디비 사용구조3  _ SharedPreference로 송id(primarykey) 전달받기
         binding.mainPlayerLayout.setOnClickListener {
             Log.d("nowSongId", song.id.toString())
             val editor = getSharedPreferences("song", MODE_PRIVATE).edit() // sharedpreference로부터
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStart() { // id에 해당하는 song 데이터 전달
+    override fun onStart() { // 룸디비 사용구조2 _ id에 해당하는 song 데이터 전달
         super.onStart()
 
         val spf = getSharedPreferences("song", MODE_PRIVATE)
@@ -117,9 +118,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // ROOMDB에 데이터 저장
+    // 룸디비 사용구조1 _ Songs 데이터 저장(ROOMDB 데이터 저장)
     private fun inputDummySongs() {
-        val songDB = SongDatabase.getInstance(this)!! // 인스턴스 가져오기
+        val songDB = SongDatabase.getInstance(this)!! // 인스턴스 가져오기 (songdao사용을 위해)
         val songs = songDB.songDao().getSongs() // 테이블의 모든 값 가져오기
 
         if (songs.isNotEmpty()) return // songs에 이미 데이터가 있을 경우 함수 끝내기
