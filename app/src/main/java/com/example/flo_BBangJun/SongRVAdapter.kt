@@ -30,8 +30,8 @@ class SongRVAdapter() :
     override fun onBindViewHolder(holder: SongRVAdapter.ViewHolder, position: Int) {
         holder.bind(songs[position])
         holder.binding.itemSongMoreIv.setOnClickListener { // 점3개 버튼이 눌렸을 때 item 삭제
-            removeSong(position) // 리스트에서 삭제
             mItemClickListener.onRemoveSong(songs[position].id) // db에서도 삭제
+            removeSong(position) // 리스트에서 삭제
         }
     }
 

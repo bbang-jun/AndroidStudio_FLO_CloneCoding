@@ -1,5 +1,6 @@
 package com.example.flo_BBangJun
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -117,6 +118,22 @@ class MainActivity : AppCompatActivity() {
             binding.mainMiniplayerPlayIv.visibility = View.VISIBLE
         }
     }
+
+//    private fun playNext(){
+//        songList[nowPos].isPlaying=false
+//        songList[nowPos].second=0
+//
+//        if(nowPos == songList.size-1)
+//            nowPost=0
+//        else nowPos++
+//
+//        player.interrupt()
+//        mediaPlayer?.release()
+//        mediaPlayer = nullsetPlayer(songList[nowPos])
+//    }
+//}
+
+
 
     // 룸디비 사용구조1 _ Songs 데이터 저장(ROOMDB 데이터 저장)
     private fun inputDummySongs() {
@@ -284,4 +301,28 @@ class MainActivity : AppCompatActivity() {
         val _songs = songDB.songDao().getSongs()
         Log.d("DB DATA", _songs.toString()) // db에 데이터가 들어가 있는지 확인
     }
+
+//    inner class Player(private val song: Song) : Thread(){
+//        override fun run() {
+//            try{
+//                while(true){
+//                    if(song.isPlaying){
+//                        sleep(1000)
+//                        song.second++
+//
+//                        if(song.second >= song.playTime){
+//                            runOnUiThread {
+//                                playNext()
+//                            }
+//                        }
+//                        runOnUiThread {
+//                            binding.mainProgressSb.progress=song.second*1000/song.playTime
+//                        }
+//                    }
+//                }
+//            } catch (e: InterruptedException){
+//                Log.d(TAG, "쓰레드가 종료")
+//            }
+//        }
+//    }
 }
