@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/flo_BBangJun/app/src/main/res/drawable/toast_like.xml" value="0.2796296296296296" />
         <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/flo_BBangJun/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/flo_BBangJun/app/src/main/res/layout/activity_song.xml" value="0.4" />
         <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/flo_BBangJun/app/src/main/res/layout/activity_splash.xml" value="0.23385416666666667" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/flo_BBangJun/app/src/main/res/layout/item_album.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/flo_BBangJun/app/src/main/res/layout/item_locker.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/flo_BBangJun/app/src/main/res/layout/item_song.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/flo_BBangJun/app/src/main/res/layout/toast_likeon.xml" value="0.264" />
       </map>
     </option>
   </component>

@@ -1,18 +1,23 @@
 package com.example.flo_BBangJun
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.example.flo_BBangJun.databinding.ActivitySongBinding
-import com.google.gson.Gson
+import com.example.flo_BBangJun.databinding.ToastLikeonBinding
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -112,6 +117,7 @@ class SongActivity : AppCompatActivity() {
 
         if (song.isLike) {
             binding.songLikeIv.setImageResource(R.drawable.ic_my_like_on)
+
         } else {
             binding.songLikeIv.setImageResource(R.drawable.ic_my_like_off)
         }
@@ -148,7 +154,7 @@ class SongActivity : AppCompatActivity() {
     private fun moveSong(direct: Int){ // 노래 이동
 
         if (nowPos + direct < 0){
-            Toast.makeText(this,"first song",Toast.LENGTH_SHORT).show()
+
             return
         }
         if (nowPos + direct >= songs.size){
@@ -162,7 +168,7 @@ class SongActivity : AppCompatActivity() {
         startTimer()
 
         mediaPlayer?.release() // 미디어플레이어가 가지고 있던 리소스를 해방
-        mediaPlayer = null // 미디어플레이어 해제
+        mediaPlayer = null // 미디어플레이Toast.makeText(this,"first song",Toast.LENGTH_SHORT).show()어 해제
 
         setPlayer(songs[nowPos])
     }
@@ -174,12 +180,31 @@ class SongActivity : AppCompatActivity() {
 
         if (isLike){ // true
             binding.songLikeIv.setImageResource(R.drawable.ic_my_like_off)
+            Toastlike.createToast(context=this, "좋아요 한 곡이 취소되었습니다.")?.show()
         }else{
             binding.songLikeIv.setImageResource(R.drawable.ic_my_like_on)
+            Toastlike.createToast(context=this, "좋아요 한 곡에 담겼습니다.")?.show()
         }
     }
 
+    object Toastlike {
 
+        fun createToast(context: Context, message: String): Toast? {
+            val inflater = LayoutInflater.from(context)
+            val binding: ToastLikeonBinding =
+                DataBindingUtil.inflate(inflater, R.layout.toast_likeon, null, false)
+
+            binding.tvSample.text = message
+
+            return Toast(context).apply {
+                setGravity(Gravity.BOTTOM or Gravity.CENTER, 0, 200.toPx())
+                duration = Toast.LENGTH_LONG
+                view = binding.root
+            }
+        }
+
+        private fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
+    }
 
 
     private fun setPlayerStatus(isPlaying: Boolean) {
@@ -198,6 +223,7 @@ class SongActivity : AppCompatActivity() {
             mediaPlayer?.pause()
         }
     }
+
 
     inner class Timer(private val playTime: Int = 0, var isPlaying: Boolean = false) : Thread() {
         private var second: Long = 0
