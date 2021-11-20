@@ -1,5 +1,6 @@
 package com.example.flo_BBangJun
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,10 @@ class LockerFragment : Fragment() {
             tab, position -> // 탭레이아웃에 어떤 텍스트가 들어갈지
             tab.text = information[position]
         }.attach()
+
+        binding.lockerLoginTV.setOnClickListener {
+            startActivity(Intent(activity, LoginActivity::class.java))
+        }
 
         return binding.root
     }
