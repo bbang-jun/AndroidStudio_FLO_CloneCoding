@@ -43,7 +43,7 @@
         android:id="@+id/signup_at_TV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text=" @"
+        android:text="/@"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:paddingStart="-5dp"
@@ -56,6 +56,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="직접입력"
+        android:inputType="textWebEmailAddress"
         app:layout_constraintStart_toEndOf="@id/signup_at_TV"
         app:layout_constraintEnd_toEndOf="@id/signup_close_IB"
         app:layout_constraintTop_toTopOf="@id/signup_startid_ET"/>

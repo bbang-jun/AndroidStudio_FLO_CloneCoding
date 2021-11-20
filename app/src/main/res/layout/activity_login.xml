@@ -55,6 +55,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="직접입력"
+        android:inputType="textWebEmailAddress"
         app:layout_constraintStart_toEndOf="@id/login_at_TV"
         app:layout_constraintEnd_toEndOf="@id/login_close_IB"
         app:layout_constraintTop_toTopOf="@id/login_startid_ET"/>
@@ -131,14 +132,15 @@
         app:layout_constraintTop_toTopOf="@id/login_findID_TV"/>
 
     <TextView
+        android:id="@+id/login_signup_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="회원가입"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="@id/login_login_BT"
-        app:layout_constraintTop_toBottomOf="@id/login_login_BT"/>
+        app:layout_constraintTop_toBottomOf="@id/login_login_BT" />
 
     <Button
         android:id="@+id/login_Tlogin_BT"

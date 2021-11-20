@@ -13,4 +13,9 @@ class SignUpActivity : AppCompatActivity(){
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
+//    private fun getUser(): User{
+//        val email: String = binding
+//
+//    }
 }

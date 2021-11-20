@@ -19,6 +19,8 @@
 
         <activity android:name="com.example.flo_BBangJun.MainActivity"/>
         <activity android:name="com.example.flo_BBangJun.SongActivity"/>// 새로운 바인딩을 할 때 새로운 액티비티를 추가해주어야 함
+        <activity android:name="com.example.flo_BBangJun.LoginActivity"/>
+        <activity android:name="com.example.flo_BBangJun.SignUpActivity"/>
     </application>
 
 </manifest>
