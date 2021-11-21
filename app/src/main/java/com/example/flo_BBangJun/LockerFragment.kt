@@ -16,7 +16,7 @@ class LockerFragment : Fragment() {
 
     lateinit var binding: FragmentLockerBinding
 
-    val information = arrayListOf("저장한 곡", "음악파일")
+    val information = arrayListOf("저장한 곡", "음악파일", "저장앨범")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

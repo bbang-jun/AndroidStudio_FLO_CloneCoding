@@ -32,14 +32,15 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/locker_tablayout_LO"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:tabSelectedTextColor="#3f3fff"
         app:tabIndicatorFullWidth="false"
         app:tabIndicatorColor="#3f3fff"
-        app:tabTextColor="#3f3fff"
         app:tabRippleColor="#00ff0000"
+        android:layout_marginLeft="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/locker_locker_TV"/>
 
     <androidx.viewpager2.widget.ViewPager2

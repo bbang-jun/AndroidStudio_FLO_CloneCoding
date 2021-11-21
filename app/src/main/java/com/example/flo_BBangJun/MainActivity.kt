@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initNavigation()
+        inputDummyAlbums()
         inputDummySongs()
 
         // 룸디비 사용구조3  _ SharedPreference로 송id(primarykey) 전달받기
@@ -134,6 +135,49 @@ class MainActivity : AppCompatActivity() {
 //}
 
 
+    //ROOM_DB
+    private fun inputDummyAlbums() {
+        val songDB = SongDatabase.getInstance(this)!!
+        val albums = songDB.albumDao().getAlbums()
+
+        if (albums.isNotEmpty()) return
+
+        songDB.albumDao().insert(
+            Album(
+                1,
+                "IU 5th Album 'LILAC'", "아이유 (IU)", R.drawable.img_album_exp2
+            )
+        )
+
+        songDB.albumDao().insert(
+            Album(
+                2,
+                "Butter", "방탄소년단 (BTS)", R.drawable.img_album_exp
+            )
+        )
+
+        songDB.albumDao().insert(
+            Album(
+                3,
+                "iScreaM Vol.10 : Next Level Remixes", "에스파 (AESPA)", R.drawable.img_album_exp3
+            )
+        )
+
+        songDB.albumDao().insert(
+            Album(
+                4,
+                "MAP OF THE SOUL : PERSONA", "방탄소년단 (BTS)", R.drawable.img_album_exp4
+            )
+        )
+
+        songDB.albumDao().insert(
+            Album(
+                5,
+                "GREAT!", "모모랜드 (MOMOLAND)", R.drawable.img_album_exp5
+            )
+        )
+
+    }
 
     // 룸디비 사용구조1 _ Songs 데이터 저장(ROOMDB 데이터 저장)
     private fun inputDummySongs() {

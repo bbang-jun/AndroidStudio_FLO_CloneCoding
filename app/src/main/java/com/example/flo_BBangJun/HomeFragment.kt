@@ -16,17 +16,14 @@ import com.google.gson.Gson
 
 
 class HomeFragment : Fragment() {
-
     lateinit var binding: FragmentHomeBinding // 뷰 바인딩 1
+    private var albums = ArrayList<Album>()
+
+    private lateinit var songDB: SongDatabase
 
     lateinit var threadBanner : bannerThread
 
     var bannerTime = 0
-
-    // recycler view step 3-1 arraylist 생성
-    private var albumDatas = ArrayList<Album>()
-
-
 
 
     override fun onCreateView(
@@ -37,39 +34,43 @@ class HomeFragment : Fragment() {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false) // 뷰 바인딩 2
 
+        //ROOM_DB
+        songDB = SongDatabase.getInstance(requireContext())!!
+        albums.addAll(songDB.albumDao().getAlbums()) // songDB에서 album list를 가져옵니다.
+
+        // step5-3(레이아웃 매니저 추가) 레이아웃 매니저 설정(아이템 배치를 어떻게 할 것인지) 리니어레이아웃에서 수평으로.
+        binding.homeTodayMusicAlbumRecyclerview.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        // step5-1(리사이클러뷰에 어댑터 연결) 더미데이터와 Adapter 연결
+        val albumRVAdapter = AlbumRVAdapter(albums)
+
+        // 아이템뷰를 클릭했을 때 fragment 전환
+        albumRVAdapter.setMyItemClickListener(object : AlbumRVAdapter.MyItemClickListener{
+
+            override fun onItemclick(album: Album) {
+                startAlbumFragment(album)
+            }
+
+            override fun onRemoveAlbum(position: Int) {
+                albumRVAdapter.removeItem(position)
+            }
+        })
+
+        // step5-2(리사이클러뷰에 어댑터 연결) recyclerview에 Adapter 연결
+
+        binding.homeTodayMusicAlbumRecyclerview.adapter = albumRVAdapter
+
 //        binding.homeIU1IV.setOnClickListener {
 //            (context as MainActivity).supportFragmentManager.beginTransaction() // context as Mainactivity = mainactivity에서의 startactivity와 같은 기능.
 //                .replace(R.id.main_frm, AlbumFragment()) // replace: mainactivity에 있는 homefragment를 albumfragment로 대체한다.
 //                .commitAllowingStateLoss() // 내부 동작 하나의 패턴.
 //        }
 
-        // recycler view step 3-2 데이터 리스트 생성(더미 데이터)
-        albumDatas.apply{
-            add(Album("Butter", "방탄소년단 (BTS)", R.drawable.img_album_exp))
-            add(Album("Lilac", "아이유 (IU)", R.drawable.img_album_exp2))
-            add(Album("Next Level", "에스파 (AESPA)", R.drawable.img_album_exp3))
-            add(Album("Boy with Luv", "방탄소년단 (BTS)", R.drawable.img_album_exp4))
-            add(Album("BBoom BBoom", "모모랜드 (MOMOILAND)", R.drawable.img_album_exp5))
-            add(Album("weekend", "태연 (Tae Yeon)", R.drawable.img_album_exp6))
-        }
-
-        // step5-1(리사이클러뷰에 어댑터 연결) 더미데이터와 Adapter 연결
-        val albumRVAdapter = AlbumRVAdapter(albumDatas)
-        // step5-2(리사이클러뷰에 어댑터 연결) recyclerview에 Adapter 연결
-        binding.homeTodayMusicAlbumRecyclerview.adapter = albumRVAdapter
-        // step5-3(레이아웃 매니저 추가) 레이아웃 매니저 설정(아이템 배치를 어떻게 할 것인지) 리니어레이아웃에서 수평으로.
-        binding.homeTodayMusicAlbumRecyclerview.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         val panelAdapter = PanelViewpagerAdapter(this) // PanelViewpager와 Homefragment의 연결
         binding.homePanelVP.adapter = panelAdapter
 
-        // 아이템뷰를 클릭했을 때 fragment 전환
-        albumRVAdapter.setMyItemClickListener(object : AlbumRVAdapter.MyItemClickListener{
 
-            override fun onItemclick(album: Album) {
-                changeAlbumFragment(album)
-            }
-        })
 
 
         val bannerAdapter =
@@ -96,16 +97,16 @@ class HomeFragment : Fragment() {
         return binding.root // 뷰바인딩 3
     }
 
-    private fun changeAlbumFragment(album: Album) {
-        (context as MainActivity).supportFragmentManager.beginTransaction() // context as Mainactivity = mainactivity에서의 startactivity와 같은 기능.
+    fun startAlbumFragment(album: Album) {
+        (context as MainActivity).supportFragmentManager.beginTransaction()
             .replace(R.id.main_frm, AlbumFragment().apply {
                 arguments = Bundle().apply {
-                    val gson = Gson() // putString("title", album.title) 반복을 지양하기 위해 gson 사용
+                    val gson = Gson()
                     val albumJson = gson.toJson(album)
                     putString("album", albumJson)
                 }
-            }) // replace: mainactivity에 있는 homefragment를 albumfragment로 대체한다.
-            .commitAllowingStateLoss() // 내부 동작 하나의 패턴.
+            })
+            .commitAllowingStateLoss()
     }
 
     override fun onPause(){

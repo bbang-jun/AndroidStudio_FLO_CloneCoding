@@ -121,19 +121,8 @@
             app:layout_constraintEnd_toStartOf="@id/home_textinternal_TV"
             app:layout_constraintTop_toBottomOf="@id/home_panel_VP"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_today_music_album_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_text6_TV"/>
-<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--        android:orientation="horizontal"-->
-<!--        tools:listitem="@layout/item_album"-->
 
-
-<!--        <ImageView-->
+        <!--        <ImageView-->
 <!--            android:id="@+id/home_viewpage1_IV"-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
@@ -144,6 +133,17 @@
 <!--            app:layout_constraintTop_toBottomOf="@id/hor" />-->
         <!-- (음악을 알려주세요! 배너)
         adjustviewbounds 속성을 이용해 뷰 내부의 빈 공간 없애기 -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_today_music_album_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/home_text6_TV"
+            tools:layout_editor_absoluteX="1dp"
+            tools:listitem="@layout/item_album" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/home_banner_VP"

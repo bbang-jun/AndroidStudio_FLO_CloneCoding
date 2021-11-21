@@ -4,11 +4,9 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-
 import com.example.flo_BBangJun.databinding.ItemSongBinding
 
-class SongRVAdapter() :
-        RecyclerView.Adapter<SongRVAdapter.ViewHolder>() {
+class SongRVAdapter() : RecyclerView.Adapter<SongRVAdapter.ViewHolder>() {
     private val songs = ArrayList<Song>() // 기존에는 SavedSongFragment에서 데이터 리스트를 전달했지만 내부에서 리스트 관리
 
     interface MyItemClickListener{
