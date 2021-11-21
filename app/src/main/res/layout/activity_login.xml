@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:hint="아이디(이메일)"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:paddingEnd="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_logo_IB"/>
@@ -95,14 +95,15 @@
         android:id="@+id/login_login_BT"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="로그인"
-        android:textStyle="bold"
-        android:textSize="15dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/blue"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@id/login_password_ET"
+        android:text="로그인"
+        android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/login_password_ET"
-        app:layout_constraintTop_toBottomOf="@id/login_password_ET"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/login_password_ET"
+        app:layout_constraintTop_toBottomOf="@id/login_password_ET" />
 
     <TextView
         android:id="@+id/login_findID_TV"

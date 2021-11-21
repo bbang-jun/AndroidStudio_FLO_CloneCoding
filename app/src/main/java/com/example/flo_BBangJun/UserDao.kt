@@ -11,7 +11,7 @@ interface UserDao {
     @Insert
     fun insert(user: User)
 
-    // 저장된 모든 유저의 정보를 가져올 수 있도록 하는
+    // 저장된 모든 유저의 정보를 가져올 수 있도록 하는 쿼리문
     @Query("SELECT * FROM UserTable")
     fun getUsers(): List<User>
 
