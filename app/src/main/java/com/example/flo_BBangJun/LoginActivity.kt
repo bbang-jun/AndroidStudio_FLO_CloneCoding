@@ -21,6 +21,7 @@ class LoginActivity : AppCompatActivity(){
 
         binding.loginLoginBT.setOnClickListener {
             login()
+            startMainActivity()
         }
     }
 
@@ -48,6 +49,11 @@ class LoginActivity : AppCompatActivity(){
             saveJwt(user.id)
         }
         Toast.makeText(this, "회원 정보가 존재하지 않습니다.", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun startMainActivity(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun saveJwt(jwt: Int){

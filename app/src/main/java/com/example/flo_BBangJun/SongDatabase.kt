@@ -6,8 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [Song::class, User::class], version = 1)
+@Database(entities = [Song::class, Album::class, User::class], version = 1)
 abstract class SongDatabase: RoomDatabase() {
+    abstract fun albumDao(): AlbumDao // 추상클래스
     abstract fun songDao(): SongDao // 추상클래스
     abstract fun userDao(): UserDao // 추상클래스
 
