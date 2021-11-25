@@ -2,6 +2,7 @@ package com.example.flo_BBangJun
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,8 @@ import com.google.android.material.tabs.TabLayoutMediator
 class LockerFragment : Fragment() {
 
     lateinit var binding: FragmentLockerBinding
+
+
 
     val information = arrayListOf("저장한 곡", "음악파일", "저장앨범")
 
@@ -47,14 +50,15 @@ class LockerFragment : Fragment() {
          val jwt = getJwt()// jwt를 가져오는 함수
 
         if(jwt==0){
+//            binding.lockerNameTV.text=""
             binding.lockerLoginTV.text="로그인"
-
             binding.lockerLoginTV.setOnClickListener {
                 startActivity(Intent(activity, LoginActivity::class.java))
             }
         } else{
+//            val songDB = SongDatabase.getInstance(requireContext())!!
             binding.lockerLoginTV.text="로그아웃"
-
+//            binding.lockerNameTV.text=songDB.userDao().getUsers(jwt).name
             binding.lockerLoginTV.setOnClickListener {
                 // 로그아웃을 시켜주는 함수
                 logout()

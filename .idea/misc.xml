@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/AndroidStudio_FLO_CloneCoding/app/src/main/res/layout/activity_login.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/AndroidStudio_FLO_CloneCoding/app/src/main/res/layout/activity_signup.xml" value="0.2421875" />
         <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/AndroidStudio_FLO_CloneCoding/app/src/main/res/layout/fragment_album.xml" value="0.3541666666666667" />
         <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/AndroidStudio_FLO_CloneCoding/app/src/main/res/layout/fragment_home.xml" value="0.2046875" />
         <entry key="..\:/Users/BYEONGJUN_KANG/AndroidStudioProjects/AndroidStudio_FLO_CloneCoding/app/src/main/res/layout/fragment_locker.xml" value="0.25364583333333335" />

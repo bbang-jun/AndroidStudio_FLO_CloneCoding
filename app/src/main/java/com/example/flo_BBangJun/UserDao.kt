@@ -18,4 +18,7 @@ interface UserDao {
     // 유저 한 명의 정보만 가져올 수 있도록 하는 쿼리문
     @Query("SELECT * FROM UserTable WHERE email = :email AND password = :password")
     fun getUser(email: String, password: String): User?
+
+//    @Query("SELECT * FROM UserTable WHERE id=:userId")
+//    fun getUsers(userId: Int): User
 }

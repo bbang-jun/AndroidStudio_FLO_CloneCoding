@@ -25,8 +25,9 @@ class SignUpActivity : AppCompatActivity(){
     private fun getUser(): User{
         val email: String = binding.signupStartidET.text.toString() + "@" + binding.signupEndidET.text.toString()
         val pwd: String = binding.signupPasswordET.text.toString()
+//        val name: String = binding.signupNameET.text.toString()
 
-        return User(email, pwd)
+        return User(email, pwd) // ,name
     }
 
     // 회원가입
