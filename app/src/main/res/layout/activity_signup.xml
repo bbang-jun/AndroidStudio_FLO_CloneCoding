@@ -39,6 +39,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup_signup_TV"/>
 
+    <View
+        android:id="@+id/sign_up_id_underscore_view"
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_marginTop="15dp"
+        android:background="#a8a8a8"
+        app:layout_constraintEnd_toEndOf="@id/signup_startid_ET"
+        app:layout_constraintStart_toStartOf="@id/signup_startid_ET"
+        app:layout_constraintTop_toBottomOf="@id/signup_startid_ET"/>
+
+    <TextView
+        android:id="@+id/sign_up_email_error_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sign_up_id_underscore_view"/>
+
+    <EditText
+        android:id="@+id/signup_name_ET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="이름"
+        app:layout_constraintEnd_toEndOf="@id/signup_close_IB"
+        app:layout_constraintStart_toStartOf="@id/signup_startid_ET"
+        app:layout_constraintTop_toBottomOf="@id/sign_up_email_error_tv" />
+
     <TextView
         android:id="@+id/signup_at_TV"
         android:layout_width="0dp"
@@ -79,7 +111,7 @@
         android:hint="비밀번호"
         app:layout_constraintEnd_toEndOf="@id/signup_close_IB"
         app:layout_constraintStart_toStartOf="@id/signup_startid_ET"
-        app:layout_constraintTop_toBottomOf="@id/signup_startid_ET" />
+        app:layout_constraintTop_toBottomOf="@id/signup_name_ET" />
 
     <ImageButton
         android:id="@+id/signup_PW_on_IB"
@@ -112,16 +144,6 @@
         app:layout_constraintEnd_toEndOf="@id/signup_confirm_password_ET"
         app:layout_constraintTop_toTopOf="@id/signup_confirm_password_ET"
         app:layout_constraintBottom_toBottomOf="@id/signup_confirm_password_ET"/>
-
-    <EditText
-        android:id="@+id/signup_name_ET"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="이름"
-        app:layout_constraintEnd_toEndOf="@id/signup_close_IB"
-        app:layout_constraintStart_toStartOf="@id/signup_startid_ET"
-        app:layout_constraintTop_toBottomOf="@id/signup_confirm_password_ET" />
 
 
     <Button
