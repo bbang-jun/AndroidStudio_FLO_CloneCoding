@@ -47,7 +47,7 @@ class LockerFragment : Fragment() {
     }
 
     private fun initView(){
-         val jwt = getJwt()// jwt를 가져오는 함수
+         val jwt = getUserIdx(requireContext())// jwt를 가져오는 함수
 
         if(jwt==0){
 //            binding.lockerNameTV.text=""
@@ -67,11 +67,7 @@ class LockerFragment : Fragment() {
         }
     }
 
-    private fun getJwt(): Int {
-        val spf = activity?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)
 
-        return spf!!.getInt("jwt", 0)
-    }
 
     private fun logout(){
         val spf = activity?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)

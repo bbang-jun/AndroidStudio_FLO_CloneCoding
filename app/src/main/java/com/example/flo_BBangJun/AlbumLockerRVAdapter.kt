@@ -36,12 +36,14 @@ class AlbumLockerRVAdapter (): RecyclerView.Adapter<AlbumLockerRVAdapter.ViewHol
     override fun getItemCount(): Int = albums.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addAlbums(albums: ArrayList<Album>){
+    fun addAlbums(albums: List<Album>){
         this.albums.clear()
         this.albums.addAll(albums)
 
         notifyDataSetChanged()
     }
+
+//    ArrayList<Album>
 
     fun removeSong(position: Int){
         albums.removeAt(position)
