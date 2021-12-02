@@ -16,7 +16,7 @@ android {
         enabled = true
     }
     defaultConfig {
-        applicationId "com.example.flo_BBangJun"
+        applicationId "com.example.flo_clonecoding_BBangJun"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

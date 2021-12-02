@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flo_BBangJun">
+    package="com.example.flo_clonecoding_BBangJun">
     
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.BottomNaviTemplate">
-        <activity android:name="com.example.flo_BBangJun.SplahActivity">
+        android:theme="@style/Theme.flo_clonecoding_BBangJun">
+        <activity android:name="com.example.flo_clonecoding_BBangJun.SplahActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,10 +20,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.flo_BBangJun.MainActivity"/>
-        <activity android:name="com.example.flo_BBangJun.SongActivity"/>// 새로운 바인딩을 할 때 새로운 액티비티를 추가해주어야 함
-        <activity android:name="com.example.flo_BBangJun.LoginActivity"/>
-        <activity android:name="com.example.flo_BBangJun.SignUpActivity"/>
+        <activity android:name="com.example.flo_clonecoding_BBangJun.MainActivity"/>
+        <activity android:name="com.example.flo_clonecoding_BBangJun.SongActivity"/>// 새로운 바인딩을 할 때 새로운 액티비티를 추가해주어야 함
+        <activity android:name="com.example.flo_clonecoding_BBangJun.LoginActivity"/>
+        <activity android:name="com.example.flo_clonecoding_BBangJun.SignUpActivity"/>
     </application>
 
 </manifest>
